@@ -1,13 +1,13 @@
 package com.shiqian.youknowme;
 
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.widget.TextView;
 
+import com.shiqian.youknowme.BaseApp.MVPBaseActivity;
 import com.shiqian.youknowme.Presenter.TestPresenter;
 import com.shiqian.youknowme.ViewImpl.TestActivityView;
 
-public class TestActivity extends AppCompatActivity implements TestActivityView{
+public class TestActivity extends MVPBaseActivity<TestActivityView,TestPresenter> implements TestActivityView{
 
     private TestPresenter p;
     private TextView tv;
@@ -17,12 +17,15 @@ public class TestActivity extends AppCompatActivity implements TestActivityView{
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_test);
 
-        p = new TestPresenter(this);
-
         tv = (TextView) findViewById(R.id.tv);
-
         p.setText();
 
+    }
+
+    @Override
+    protected TestPresenter creatPresenter() {
+        p = new TestPresenter(this);
+        return p;
     }
 
     @Override
@@ -37,13 +40,6 @@ public class TestActivity extends AppCompatActivity implements TestActivityView{
 
     @Override
     protected void onResume() {
-        try {
-            Thread.sleep(10000);
-        } catch (InterruptedException e) {
-            e.printStackTrace();
-        }
         super.onResume();
-
-
     }
 }

@@ -1,3 +1,4 @@
 <resources>
-    <string name="app_name">YouKnowMe</string>
+    <string name="app_name">PlsTrackMe</string>
+    <string name="title_activity_test2">Test2Activity</string>
 </resources>
