@@ -1,4 +1,31 @@
 <resources>
     <string name="app_name">PlsTrackMe</string>
     <string name="title_activity_test2">Test2Activity</string>
+    <string name="title_activity_main2">Main2Activity</string>
+
+    <!--list preference test-->
+    <string name="lp_key">lpKey</string>
+    <string name="lp_title">lpTitle</string>
+    <string name="lp_sumary">lpSumary</string>
+    <string name="lp_dialog_title">lpDialogTitle</string>
+    <array name="lp_entries">
+        <item>山东</item>
+        <item>福建</item>
+        <item>广东</item>
+        <item>河南</item>
+    </array>
+
+    <array name="lp_entry_value1">
+        <item>shandong1</item>
+        <item>fujian1</item>
+        <item>guangdong1</item>
+        <item>henan1</item>
+    </array>
+    <array name="lp_entry_value2">
+        <item>shandong2</item>
+        <item>fujian2</item>
+        <item>guangdong2</item>
+        <item>henan2</item>
+    </array>
+
 </resources>

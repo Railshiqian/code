@@ -19,6 +19,7 @@ public class Design {
     * 6,添加好友，授权查看
     * 7,系统设置页
     * 8,查看具体信息页
+    * 9,Banner:RadioButton+FrameLayout+Fragment
     *
     *
     *
