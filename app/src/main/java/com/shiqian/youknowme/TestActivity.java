@@ -1,60 +1,52 @@
 package com.shiqian.youknowme;
 
 import android.os.Bundle;
-import android.util.EventLog;
-import android.util.Log;
-import android.view.KeyEvent;
+import android.support.v7.widget.DefaultItemAnimator;
+import android.support.v7.widget.LinearLayoutManager;
+import android.support.v7.widget.RecyclerView;
 import android.view.View;
-import android.widget.ArrayAdapter;
-import android.widget.ListView;
+import android.view.ViewGroup;
+import android.widget.Adapter;
+import android.widget.BaseAdapter;
+import android.widget.Button;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import com.shiqian.youknowme.BaseApp.MVPBaseActivity;
 import com.shiqian.youknowme.Presenter.TestPresenter;
 import com.shiqian.youknowme.ViewImpl.TestActivityView;
 
+import java.util.ArrayList;
+
 public class TestActivity extends MVPBaseActivity<TestActivityView, TestPresenter> implements TestActivityView {
 
     private TestPresenter p;
-    private TextView tv;
-    private ListView lv;
+    private RecyclerView rlv;
+    private LinearLayoutManager mLinearLayoutManager;
+    private MyAdapter mAdapter;
+    private ArrayList<String> list;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_test);
 
-        tv = (TextView) findViewById(R.id.tv);
-        p.setText();
+        Button btn = findViewById(R.id.btn);
 
-        lv = findViewById(R.id.lv);
-        String[] arr = new String[]{"aaa", "sss", "ddd", "fff", "ggg", "hhh","iii","jjj","kkk","lll"};
-        final ArrayAdapter<String> adapter = new ArrayAdapter<String>(TestActivity.this, android.R.layout.simple_list_item_1, arr);
-
-        lv.setAdapter(adapter);
-
-        lv.setOnKeyListener(new View.OnKeyListener() {
+        btn.setOnClickListener(new View.OnClickListener() {
             @Override
-            public boolean onKey(View view, int i, KeyEvent keyEvent) {
-                switch (i) {
-                    case KeyEvent.KEYCODE_DPAD_UP:
-                    case KeyEvent.KEYCODE_DPAD_DOWN:
+            public void onClick(View view) {
 
-                        if (keyEvent.getAction() == KeyEvent.ACTION_UP) {
-                            if (lv.hasFocus()) {
-                                Log.d("TEST", lv.hasFocus() + "," + lv.getSelectedItemPosition()+","+(String)(lv.getSelectedItem()));
-                                int pos = lv.getSelectedItemPosition();
-                                Toast.makeText(TestActivity.this, pos + "", Toast.LENGTH_SHORT).show();
-                            }
-                        }
 
-                        break;
 
-                }
-                return false;
             }
         });
+
+        rlv = findViewById(R.id.rlv);
+
+        mLinearLayoutManager = new LinearLayoutManager(this,LinearLayoutManager.VERTICAL,false);
+        list = new ArrayList<String>();
+        mAdapter = new MyAdapter(list);
+
 
 
     }
@@ -67,16 +59,45 @@ public class TestActivity extends MVPBaseActivity<TestActivityView, TestPresente
 
     @Override
     public void setText(String text) {
-        tv.setText(text);
     }
 
     @Override
     public String getText() {
-        return tv.getText().toString();
+        return null;
     }
 
     @Override
     protected void onResume() {
         super.onResume();
     }
+
+    private class MyAdapter extends BaseAdapter{
+
+        ArrayList<String> list;
+
+        public MyAdapter(ArrayList<String> list){
+            this.list = list;
+        }
+
+        @Override
+        public int getCount() {
+            return 0;
+        }
+
+        @Override
+        public Object getItem(int i) {
+            return null;
+        }
+
+        @Override
+        public long getItemId(int i) {
+            return 0;
+        }
+
+        @Override
+        public View getView(int i, View view, ViewGroup viewGroup) {
+            return null;
+        }
+    }
+
 }

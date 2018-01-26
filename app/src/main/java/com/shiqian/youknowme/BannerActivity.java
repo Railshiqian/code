@@ -1,16 +1,11 @@
 package com.shiqian.youknowme;
 
-import android.app.FragmentManager;
-import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.RadioButton;
 
 import com.shiqian.youknowme.BaseApp.MVPBaseActivity;
-import com.shiqian.youknowme.Fragment.FriendsFragment;
-import com.shiqian.youknowme.Fragment.MsgFragment;
-import com.shiqian.youknowme.Fragment.ProfileFragment;
 import com.shiqian.youknowme.Presenter.BannerActivityPresenter;
 import com.shiqian.youknowme.ViewImpl.BannerActivityView;
 
@@ -58,15 +53,7 @@ public class BannerActivity extends MVPBaseActivity<BannerActivityView, BannerAc
 
     @Override
     public void onBackPressed() {
-//        goToHome();
         moveTaskToBack(false);
     }
 
-    //abandon
-    private void goToHome() {
-        Intent intent = new Intent(Intent.ACTION_MAIN);
-        intent.setFlags(Intent.FLAG_ACTIVITY_TASK_ON_HOME);
-        intent.addCategory(Intent.CATEGORY_HOME);
-        startActivity(intent);
-    }
 }
