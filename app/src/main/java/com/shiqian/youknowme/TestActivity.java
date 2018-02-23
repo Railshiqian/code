@@ -1,15 +1,12 @@
 package com.shiqian.youknowme;
 
 import android.os.Bundle;
-import android.support.v7.widget.DefaultItemAnimator;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Adapter;
 import android.widget.BaseAdapter;
 import android.widget.Button;
-import android.widget.TextView;
 
 import com.shiqian.youknowme.BaseApp.MVPBaseActivity;
 import com.shiqian.youknowme.Presenter.TestPresenter;
@@ -30,23 +27,21 @@ public class TestActivity extends MVPBaseActivity<TestActivityView, TestPresente
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_test);
 
-        Button btn = findViewById(R.id.btn);
+        Button btn = (Button) findViewById(R.id.btn);
 
         btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
 
 
-
             }
         });
 
-        rlv = findViewById(R.id.rlv);
+        rlv = (RecyclerView) findViewById(R.id.rlv);
 
-        mLinearLayoutManager = new LinearLayoutManager(this,LinearLayoutManager.VERTICAL,false);
+        mLinearLayoutManager = new LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false);
         list = new ArrayList<String>();
         mAdapter = new MyAdapter(list);
-
 
 
     }
@@ -71,11 +66,11 @@ public class TestActivity extends MVPBaseActivity<TestActivityView, TestPresente
         super.onResume();
     }
 
-    private class MyAdapter extends BaseAdapter{
+    private class MyAdapter extends BaseAdapter {
 
         ArrayList<String> list;
 
-        public MyAdapter(ArrayList<String> list){
+        public MyAdapter(ArrayList<String> list) {
             this.list = list;
         }
 
