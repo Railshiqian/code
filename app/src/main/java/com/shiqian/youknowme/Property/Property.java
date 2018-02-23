@@ -7,5 +7,9 @@ public class Property {
 
     public static final boolean LOG_SWITCH = true;
 
+    //encrtpt the db
+    public static final boolean ENCRYPTED = true;
+    public static final String DATABASE_PSWD = "aaabbbccc";
+
 
 }

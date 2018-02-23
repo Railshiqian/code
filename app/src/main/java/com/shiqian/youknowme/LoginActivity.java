@@ -1,11 +1,7 @@
 package com.shiqian.youknowme;
 
-import android.app.Activity;
-import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
-import android.os.Handler;
-import android.os.Message;
 
 import com.shiqian.youknowme.BaseApp.MVPBaseActivity;
 import com.shiqian.youknowme.Presenter.WelcomeActivityPresenter;
@@ -14,15 +10,14 @@ import com.shiqian.youknowme.ViewImpl.WelcomeActivityView;
 /**
  * Created by chenzd on 17-12-25.
  */
-public class WelcomeActivity extends MVPBaseActivity<WelcomeActivityView,WelcomeActivityPresenter> implements WelcomeActivityView {
+public class LoginActivity extends MVPBaseActivity<WelcomeActivityView,WelcomeActivityPresenter> implements WelcomeActivityView {
 
     private WelcomeActivityPresenter presenter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_welcome);
-        presenter.goToLoginOrBannerActivity();
+        setContentView(R.layout.activity_login);
     }
 
     @Override

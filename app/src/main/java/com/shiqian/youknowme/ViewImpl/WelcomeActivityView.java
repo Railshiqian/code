@@ -5,6 +5,4 @@ package com.shiqian.youknowme.ViewImpl;
  */
 public interface WelcomeActivityView {
 
-    public void goToBannerActivity();
-
 }

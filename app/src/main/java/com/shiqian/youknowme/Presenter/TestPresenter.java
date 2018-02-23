@@ -10,16 +10,16 @@ import com.shiqian.youknowme.model.DbModel.DbUtil;
  */
 public class TestPresenter extends BasePresenter<TestActivityView>{
 
-    DbUtilInterface util = new DbUtil();
     TestActivityView testViewImpl;
+//    DbUtilInterface util = DbUtil.getInstance(testViewImpl);
 
     public TestPresenter(TestActivityView testViewImpl){
         this.testViewImpl = testViewImpl;
     }
 
     public void setText(){
-        String text = util.getText();
-        testViewImpl.setText(text);
+//        String text = util.getText();
+//        testViewImpl.setText(text);
     }
 
     public String getText(){
