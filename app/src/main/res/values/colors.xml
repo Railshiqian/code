@@ -6,8 +6,11 @@
 
     <color name="black">#000000</color>
     <color name="white">#ffffff</color>
+    <color name="translent">#00ffffff</color>
 
     <color name="blue_holo">#05cfca</color>
+
+    <color name="green_holo">#FF05CF88</color>
 
 
 

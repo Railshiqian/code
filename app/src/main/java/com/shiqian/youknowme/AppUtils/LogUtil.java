@@ -9,37 +9,45 @@ import com.shiqian.youknowme.Property.Property;
  */
 public class LogUtil {
 
-    public void v(String TAG, String msg) {
+    private static final String DEBUG_TAG = "CHENZD_DEBUG";
+
+    public static void v(String TAG, String msg) {
         if (Property.LOG_SWITCH) {
             Log.v(TAG, msg);
         }
     }
 
-    public void d(String TAG, String msg) {
+    public static void d(String TAG, String msg) {
         if (Property.LOG_SWITCH) {
             Log.d(TAG, msg);
         }
     }
 
-    public void i(String TAG, String msg) {
+    public static void d(String msg) {
+        if (Property.LOG_SWITCH) {
+            Log.d(DEBUG_TAG, msg);
+        }
+    }
+
+    public static void i(String TAG, String msg) {
         if (Property.LOG_SWITCH) {
             Log.i(TAG, msg);
         }
     }
 
-    public void w(String TAG, String msg) {
+    public static void w(String TAG, String msg) {
         if (Property.LOG_SWITCH) {
             Log.w(TAG, msg);
         }
     }
 
-    public void e(String TAG, String msg) {
+    public static void e(String TAG, String msg) {
         if (Property.LOG_SWITCH) {
             Log.e(TAG, msg);
         }
     }
 
-    public void p(String TAG, String msg) {
+    public static void p(String TAG, String msg) {
         if (Property.LOG_SWITCH) {
             Log.w(TAG, msg, new Exception());
         }

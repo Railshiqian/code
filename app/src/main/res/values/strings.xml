@@ -27,5 +27,23 @@
         <item>guangdong2</item>
         <item>henan2</item>
     </array>
+    <string name="title_activity_login_or_register">LoginOrRegisterActivity</string>
+    <string name="login">登录</string>
+    <string name="register">注册</string>
+    <string name="behappy">be   happy</string>
+    <string name="nickname">昵称</string>
+    <string name="phonenum">手机号</string>
+    <string name="pswd">密码</string>
+    <string name="position">一</string>
+    <string name="nickname_is_null">请输入昵称</string>
+    <string name="phonenum_is_null">请输入手机号码</string>
+    <string name="pswd_is_null">请输入密码</string>
+    <string name="login_success">登录成功</string>
+    <string name="register_success">注册成功</string>
+    <string name="loading">加载中…</string>
+    <string name="message">消息</string>
+    <string name="friends">通讯录</string>
+    <string name="profile">我</string>
+
 
 </resources>

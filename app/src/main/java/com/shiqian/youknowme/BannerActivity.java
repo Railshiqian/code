@@ -19,6 +19,7 @@ public class BannerActivity extends MVPBaseActivity<BannerActivityView, BannerAc
         setContentView(R.layout.activity_banner);
         presenter.setCurrentBanner(R.id.banner_radiobtn_1);
         presenter.setButtonClickListener();
+        presenter.checkVersionUpdate();
 
     }
 

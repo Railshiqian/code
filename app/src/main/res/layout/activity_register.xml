@@ -5,7 +5,7 @@
     android:background="@color/white"
     android:orientation="vertical">
 
-    <include layout="@layout/layout_actionbar"/>
+    <include layout="@layout/layout_actionbar" />
 
     <ScrollView
         android:layout_width="match_parent"
@@ -20,10 +20,49 @@
             android:gravity="center_horizontal"
             android:orientation="vertical">
 
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical"
+                android:orientation="horizontal"
+                android:paddingBottom="8dp"
+                android:paddingTop="8dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/nickname"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/normal_text" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/position"
+                    android:textSize="@dimen/normal_text"
+                    android:visibility="invisible" />
+
+                <EditText
+                    android:id="@+id/register_edittext_nickname"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="20dp"
+                    android:background="@null"
+                    android:hint="@string/nickname"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/big_text" />
+
+            </LinearLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="2px"
+                android:background="@color/blue_holo" />
 
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
                 android:gravity="center_vertical"
                 android:orientation="horizontal"
                 android:paddingBottom="8dp"
@@ -37,13 +76,13 @@
                     android:textSize="@dimen/normal_text" />
 
                 <EditText
-                    android:id="@+id/login_edittext_phonenum"
+                    android:id="@+id/register_edittext_phonenum"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="20dp"
                     android:background="@null"
-                    android:inputType="phone"
                     android:hint="@string/phonenum"
+                    android:inputType="phone"
                     android:textColor="@color/black"
                     android:textSize="@dimen/big_text" />
 
@@ -78,7 +117,7 @@
                     android:visibility="invisible" />
 
                 <EditText
-                    android:id="@+id/login_edittext_pswd"
+                    android:id="@+id/register_edittext_pswd"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="20dp"
@@ -96,13 +135,13 @@
                 android:background="@color/blue_holo" />
 
             <Button
-                android:id="@+id/login_btn_login"
+                android:id="@+id/register_btn_register"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="20dp"
                 android:background="@color/blue_holo"
                 android:gravity="center"
-                android:text="@string/login"
+                android:text="@string/register"
                 android:textColor="@color/black"
                 android:textSize="@dimen/big_text" />
 

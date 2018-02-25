@@ -7,9 +7,8 @@ import android.os.Handler;
 
 import com.shiqian.youknowme.BannerActivity;
 import com.shiqian.youknowme.BaseApp.BasePresenter;
-import com.shiqian.youknowme.LoginActivity;
+import com.shiqian.youknowme.LoginOrRegisterActivity;
 import com.shiqian.youknowme.ViewImpl.WelcomeActivityView;
-import com.shiqian.youknowme.WelcomeActivity;
 import com.shiqian.youknowme.model.DbModel.DbUtil;
 
 /**
@@ -31,7 +30,7 @@ public class WelcomeActivityPresenter extends BasePresenter<WelcomeActivityView>
         if (isLogin()) {
             goToBannerActivity();
         } else {
-            goToLoginActivity();
+            goToLoginOrRegisterActivity();
         }
     }
 
@@ -43,21 +42,22 @@ public class WelcomeActivityPresenter extends BasePresenter<WelcomeActivityView>
                 context.startActivity(intent);
                 ((Activity)view).finish();
             }
-        }, 2000);
+        }, 1500);
     }
 
-    public void goToLoginActivity() {
+    public void goToLoginOrRegisterActivity() {
         handler.postDelayed(new Runnable() {
             @Override
             public void run() {
-                Intent intent = new Intent(context, LoginActivity.class);
+                Intent intent = new Intent(context, LoginOrRegisterActivity.class);
                 context.startActivity(intent);
                 ((Activity)view).finish();
             }
-        }, 2000);
+        }, 1000);
     }
 
     public boolean isLogin() {
+
         return DbUtil.getInstance().getRealId() != null;
     }
 

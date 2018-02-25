@@ -10,14 +10,17 @@ import java.util.Objects;
  * Created by chenzd on 18-1-23.
  */
 public interface WebInterface {
+    public void doGet(Context context, HashMap<String, Objects> map);
 
-    public void doGet(Context context,HashMap<String, Objects> map);
+    public void doPost(Context context, HashMap<String, Objects> map);
 
-    public void doPost(Context context,HashMap<String,Objects> map);
+    public void doGetAsync(Context context, HashMap<String, Objects> map);
 
-    public void uploadFile(Context context,String filePath);
+    public void doPostAsync(Context context, HashMap<String, Objects> map, Runnable runable);
 
-    public void uploadFiles(Context context,ArrayList<String> filePathList);
+    public void uploadFile(Context context, String filePath);
+
+    public void uploadFiles(Context context, ArrayList<String> filePathList);
 
 
 }

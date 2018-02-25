@@ -53,4 +53,9 @@ public class DbUtil implements DbUtilInterface {
     public User getUser() {
         return daoSession.getUserDao().loadByRowId(1l);
     }
+
+    public long saveUserMessage(User user){
+        return daoSession.getUserDao().insert(user);
+    }
+
 }

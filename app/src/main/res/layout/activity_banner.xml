@@ -3,7 +3,10 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/white"
     android:orientation="vertical">
+
+    <include layout="@layout/layout_actionbar" />
 
     <FrameLayout
         android:id="@+id/banner_framelayout"
@@ -11,50 +14,55 @@
         android:layout_height="match_parent"
         android:layout_weight="1"></FrameLayout>
 
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1px"
+        android:background="@color/colorPrimaryDark" />
+
     <RadioGroup
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:paddingTop="@dimen/banner_padding"
+        android:orientation="horizontal"
         android:paddingBottom="@dimen/banner_padding"
-        android:orientation="horizontal">
+        android:paddingTop="@dimen/banner_padding">
 
         <RadioButton
             android:id="@+id/banner_radiobtn_1"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:button="@null"
             android:layout_weight="1"
-            android:gravity="center"
-            android:text="btn1"
-            android:textSize="@dimen/huge_text"
-            android:textColor="@color/black"
+            android:button="@null"
+            android:drawablePadding="@dimen/banner_img_txt_padding"
             android:drawableTop="@mipmap/ic_launcher"
-            android:drawablePadding="@dimen/banner_img_txt_padding"/>
+            android:gravity="center"
+            android:text="@string/message"
+            android:textColor="@color/green_holo"
+            android:textSize="@dimen/big_text" />
 
         <RadioButton
             android:id="@+id/banner_radiobtn_2"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:button="@null"
             android:layout_weight="1"
-            android:gravity="center"
-            android:text="btn2"
-            android:textSize="@dimen/huge_text"
-            android:textColor="@color/black"
+            android:button="@null"
+            android:drawablePadding="@dimen/banner_img_txt_padding"
             android:drawableTop="@mipmap/ic_launcher"
-            android:drawablePadding="@dimen/banner_img_txt_padding"/>
+            android:gravity="center"
+            android:text="@string/friends"
+            android:textColor="@color/green_holo"
+            android:textSize="@dimen/big_text" />
 
         <RadioButton
             android:id="@+id/banner_radiobtn_3"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:button="@null"
             android:layout_weight="1"
-            android:gravity="center"
-            android:text="btn3"
-            android:textSize="@dimen/huge_text"
-            android:textColor="@color/black"
+            android:button="@null"
+            android:drawablePadding="@dimen/banner_img_txt_padding"
             android:drawableTop="@mipmap/ic_launcher"
-            android:drawablePadding="@dimen/banner_img_txt_padding"/>
+            android:gravity="center"
+            android:text="@string/profile"
+            android:textColor="@color/green_holo"
+            android:textSize="@dimen/big_text" />
     </RadioGroup>
 </LinearLayout>

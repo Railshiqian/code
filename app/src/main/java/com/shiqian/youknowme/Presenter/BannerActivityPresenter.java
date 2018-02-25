@@ -1,7 +1,11 @@
 package com.shiqian.youknowme.Presenter;
 
+import android.app.Activity;
 import android.app.FragmentManager;
 import android.app.FragmentTransaction;
+import android.app.IntentService;
+import android.content.Intent;
+import android.support.annotation.Nullable;
 import android.view.View;
 
 import com.shiqian.youknowme.BannerActivity;
@@ -10,7 +14,9 @@ import com.shiqian.youknowme.Fragment.FriendsFragment;
 import com.shiqian.youknowme.Fragment.MsgFragment;
 import com.shiqian.youknowme.Fragment.ProfileFragment;
 import com.shiqian.youknowme.R;
+import com.shiqian.youknowme.Services.VersionUpdateService;
 import com.shiqian.youknowme.ViewImpl.BannerActivityView;
+import com.shiqian.youknowme.model.VersionModel.VersionUpdateUtil;
 
 /**
  * Created by chenzd on 18-1-5.
@@ -18,6 +24,7 @@ import com.shiqian.youknowme.ViewImpl.BannerActivityView;
 public class BannerActivityPresenter extends BasePresenter<BannerActivityView> {
 
     private BannerActivityView view;
+    private Activity act;
 
     private FriendsFragment mFriendsFragment;
     private MsgFragment mMsgFragment;
@@ -33,6 +40,7 @@ public class BannerActivityPresenter extends BasePresenter<BannerActivityView> {
 
     public BannerActivityPresenter(BannerActivityView view) {
         this.view = view;
+        act = (Activity) view;
         fragmentmManager = view.getFragmentManager();
     }
 
@@ -98,6 +106,11 @@ public class BannerActivityPresenter extends BasePresenter<BannerActivityView> {
 
     public void setButtonClickListener() {
         view.setButtonListener();
+    }
+
+    public void checkVersionUpdate(){
+        Intent intent = new Intent(act,VersionUpdateService.class);
+        act.startService(intent);
     }
 
 }

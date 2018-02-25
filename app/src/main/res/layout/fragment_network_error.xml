@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:background="@color/white">
+
+    <TextView
+        android:id="@+id/fragment_network_error_tv_msg"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="left"
+        android:text="networkerror"
+        android:textSize="@dimen/huge_text"
+        android:textColor="@color/black"
+        android:paddingTop="15dp"
+        android:paddingBottom="15dp"
+        android:paddingLeft="10dp"
+        android:paddingRight="10dp"
+        android:layout_marginLeft="15dp"
+        android:layout_marginRight="15dp"/>
+
+    <Button
+        android:id="@+id/fragment_network_error_btn_ok"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="ok"
+        android:textColor="@color/white"
+        android:textSize="@dimen/huge_text"
+        android:background="@color/blue_holo"
+        android:paddingTop="8dp"
+        android:paddingBottom="8dp"
+        android:layout_marginTop="5dp"/>
+
+</LinearLayout>
